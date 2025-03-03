@@ -157,7 +157,6 @@ class NimAI():
         return max(possibleActions, key=lambda action: self.get_q_value(state, action))
         
 
-
 def train(n):
     """
     Train an AI by playing `n` games against itself.
