@@ -130,10 +130,10 @@ class NimAI():
         Q-value in `self.q`. If there are no available actions in
         `state`, return 0.
         """
-        possibleActions = Nim.available_actions(piles = state)
+        possibleActions = Nim.available_actions(piles=state)
         if len(possibleActions) == 0:
             return 0
-        return self.get_q_value(tuple(state), max(possibleActions,key=lambda a:self.get_q_value(state, a)))
+        return self.get_q_value(tuple(state), max(possibleActions, key=lambda a: self.get_q_value(state, a)))
 
     def choose_action(self, state, epsilon=True):
         """
@@ -154,7 +154,7 @@ class NimAI():
         if epsilon and random.randint(0, 1) < self.epsilon:
             return random.choice(possibleActions)
         
-        return max(possibleActions, key=lambda action:self.get_q_value(state, action))
+        return max(possibleActions, key=lambda action: self.get_q_value(state, action))
         
 
 
